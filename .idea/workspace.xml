@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fee4b367-6a17-4d52-a2c9-435fbe14b117" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/bstu/it31/romashenko/lab2/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/bstu/it31/romashenko/lab2/Calendar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/bstu/it31/romashenko/lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/bstu/it31/romashenko/lab2/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +29,8 @@
       <file leaf-file-name="Calendar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/bstu/it31/romashenko/lab2/Calendar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="238" column="25" lean-forward="true" selection-start-line="238" selection-start-column="25" selection-end-line="238" selection-end-column="25" />
+            <state relative-caret-position="717">
+              <caret line="244" lean-forward="true" selection-start-line="244" selection-end-line="244" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#704#705#0" expanded="true" />
@@ -165,12 +161,12 @@
       <workItem from="1550819972710" duration="82000" />
       <workItem from="1550837307423" duration="17000" />
       <workItem from="1550837861553" duration="39000" />
-      <workItem from="1554398795486" duration="7063000" />
+      <workItem from="1554398795486" duration="7236000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8322000" />
+    <option name="totallyTimeSpent" value="8495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
@@ -397,8 +393,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/bstu/it31/romashenko/lab2/Calendar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="238" column="25" lean-forward="true" selection-start-line="238" selection-start-column="25" selection-end-line="238" selection-end-column="25" />
+        <state relative-caret-position="717">
+          <caret line="244" lean-forward="true" selection-start-line="244" selection-end-line="244" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#704#705#0" expanded="true" />

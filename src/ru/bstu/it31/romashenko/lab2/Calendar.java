@@ -186,7 +186,7 @@ public class Calendar {
             default: {
                 this.days = -1;
 
-                Logger.fatal("Некорректно пердался месяц.");
+                Logger.warn("Некорректно пердался месяц.");
                 return false;
             }
         }
@@ -219,6 +219,8 @@ public class Calendar {
             }
         } catch (IOException ex) {
             Logger.error("Файл не найден. ", ex);
+            ex.printStackTrace();
+
             System.out.println(ex.getMessage());
         }
     }
@@ -239,6 +241,7 @@ public class Calendar {
             Logger.debug("В файл записали.");
         } catch (IOException ex) {
             Logger.error("В файл не записали. ", ex);
+            ex.printStackTrace();
 
             System.out.println(ex.getMessage());
         }
