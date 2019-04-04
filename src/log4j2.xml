@@ -2,23 +2,31 @@
 <Configuration status="WARN">
   <!-- Секция аппендеров -->
   <Appenders>
-  	<!-- Консольный аппендер -->
+    <!-- Консольный аппендер -->
     <Console name="Console" target="SYSTEM_OUT">
-      <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+      <PatternLayout>
+        <Pattern>[%p] %20d{dd.MM.yyyy/HH:mm:ss} %20c{1}.class  -  [%m] %n</Pattern>
+      </PatternLayout>
     </Console>
     <!-- Файловый аппендер -->
-    <File name="file" fileName="log.log">
+    <File name="file-simple" fileName="log-simple.log">
       <PatternLayout>
-        <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+        <Pattern>[%p] %20d{dd.MM.yyyy/HH:mm:ss} %20c{1}.class  -  [%m] %n</Pattern>
       </PatternLayout>
-    </File>    
+    </File>
+    <File name="file-crytical" fileName="log-crytical.log">
+      <PatternLayout>
+        <Pattern>[%p] %20d{dd.MM.yyyy/HH:mm:ss} %20c{1}.class  -  [%m] %n</Pattern>
+      </PatternLayout>
+    </File>
   </Appenders>
   <!-- Секция логгеров -->
   <Loggers>
-    <Logger name="ru.bstu.it31.romashenko.lab1" level="debug"/>
+    <Logger name="ru.bstu.it31.romashenko.lab2" level="all"/>
     <Root level="all">
       <AppenderRef ref="Console"/>
-      <AppenderRef ref="file"/>
+      <AppenderRef ref="file-simple"/>
+      <AppenderRef ref="file-crytical" level="warn"/>
     </Root>
   </Loggers>
 </Configuration>

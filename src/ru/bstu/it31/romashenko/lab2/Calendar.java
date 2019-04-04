@@ -7,26 +7,46 @@ import java.io.IOException;
 import java.lang.String;
 import org.apache.logging.log4j.*;
 
-/** @author Ромащенко Н.А.
+/**
+ * <p>Класс для работы с каледарем</p>
  *
- * @version 1. 21.02.19
+ * @author Ромащенко Н.А.
+ * @version 1.0
+ * Дата: 21.02.19
  *
- * Имя класса: Calendar
- *
- * Назначение: нахождение количества дней в месяце
+ * Класс: Calendar
+ * Описание: нахождение количества дней в месяце
  */
-
 public class Calendar {
+    /**  */
     static final Logger Logger = LogManager.getLogger(Calendar.class);
-
+    /**
+     * Переменная для года
+     */
     private int year;
+    /**
+     * Переменная для месяца
+     */
     private int mounth;
+    /**
+     * Переменная для дней
+     */
     private int days;
 
+    /**
+     * Метод для получения месяца
+     *
+     * @return возвращает месяц
+     */
     public int getMounthInt() {
         return mounth;
     }
 
+    /**
+     * Метод для получения месяца в строке
+     *
+     * @return возвращает месяц в строке
+     */
     public String getMounthString() {
         String[] sMounth = {
                 "Январь",
@@ -45,43 +65,84 @@ public class Calendar {
         return sMounth[this.mounth - 1];
     }
 
+    /**
+     * Метод для получения года
+     *
+     * @return возвращает год
+     */
     public int getYear() {
         return year;
     }
 
+    /**
+     * Метод для получения дня
+     *
+     * @return возвращает день
+     */
     public int getDays() {
         return days;
     }
 
+    /**
+     * Метод для установления месяца
+     *
+     * @param mounth месяц года
+     */
     public void setMounth(int mounth) {
         this.mounth = mounth;
     }
 
+    /**
+     * Метод для установления года
+     *
+     * @param year год
+     */
     public void setYear(int year) {
         this.year = year;
     }
 
+    /**
+     * Конструктор класса
+     *
+     * @param year   год
+     * @param mounth месяц
+     */
     public Calendar(int year, int mounth) {
         this.year = year;
         this.mounth = mounth;
+
         setCountDaysOfMounth();
     }
 
+    /**
+     * Конструктор класса
+     */
     public Calendar() {
         this.year = -1;
         this.mounth = -1;
         this.days = -1;
     }
 
+    /**
+     * Метод для проверки даты
+     *
+     * @return возвращает результат
+     */
     private boolean check() {
         if (0 > this.year || 0 > this.mounth || 12 < this.mounth) {
             Logger.warn("Некорректная дата.");
             return false;
         }
+
         Logger.info("Корректная дата.");
         return true;
     }
 
+    /**
+     * Метод для определения кол-ва дней в месяце определенном
+     *
+     * @return возвращает результат выполнения метода
+     */
     public boolean setCountDaysOfMounth() {
         // Проверка правильность даты
         if (!check()) {
@@ -100,6 +161,7 @@ public class Calendar {
                 this.days = 31;
                 break;
             }
+
             case 4:
             case 6:
             case 9:
@@ -107,6 +169,7 @@ public class Calendar {
                 this.days = 30;
                 break;
             }
+
             case 2: {
                 if (0 != year % 4) {
                     this.days = 28;
@@ -119,24 +182,33 @@ public class Calendar {
                 }
                 break;
             }
+
             default: {
                 this.days = -1;
+
                 Logger.fatal("Некорректно пердался месяц.");
                 return false;
             }
         }
-        Logger.info("Дни были найдемы.");
+
+        Logger.debug("Дни были найдемы.");
         return true;
     }
 
-    // Считываение года и месяца из файла
+    /**
+     * Считываение года и месяца из файла
+     */
     public void getValueFromFile() {
-        Logger.info("Начало чтения из файла.");
+        Logger.debug("Начало чтения из файла.");
+
         try (FileReader reader = new FileReader("ex2.txt")) {
             BufferedReader r = new BufferedReader(reader);
+
             for (int i = 0; i < 2; ++i) {
                 String sTemp = r.readLine();
+
                 int iTemp = Integer.parseInt(sTemp);
+
                 if (999 < iTemp && iTemp < 10000) {
                     this.year = iTemp;
                 } else if (0 < iTemp && iTemp < 13) {
@@ -151,18 +223,23 @@ public class Calendar {
         }
     }
 
-    // Считываение данных из файла
+    /**
+     * Ввод данных в файл
+     */
     public void printValueInFile() {
         Logger.info("Начало записи в файл.");
+
         try (FileWriter writer = new FileWriter("ex2_otvet.txt", false)) {
             String text = ""
                     + "year = " + this.year + '\n'
                     + "mounth = " + this.mounth + '\n'
                     + "days = " + this.days + '\n';
             writer.write(text);
-            Logger.info("В файл записали.");
+
+            Logger.debug("В файл записали.");
         } catch (IOException ex) {
             Logger.error("В файл не записали. ", ex);
+
             System.out.println(ex.getMessage());
         }
     }
